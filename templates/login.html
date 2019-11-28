@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <p><input type="text" name="username" placeholder="username"></p>
+    <p><input type="password" name="password" placeholder="password"></p>
+    <p><input type="password" name="cpassword" placeholder="confirm password"></p><p>{{ err }}</p>
+    <p><input type="text" name="age" placeholder="age"></p>
+    <p>
+        <input type="radio" name="gender" value="0"> 男
+        <input type="radio" name="gender" value="1"> 女
+    </p>
+    <p><input type="text" name="phone" placeholder="phone"></p>
+    <p><input type="submit" value="注册用户"></p>
+</form>
+</body>
+</html>

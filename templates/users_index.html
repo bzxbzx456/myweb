@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<div>欢迎！{{ name }}</div>
+<div>年龄：{{ age | add:2 }}</div>
+<div>爱好：{{ hobbys }} ----- {{ hobbys.0 }} -----{{ hobbys.1 }}</div>
+<div>书名：{{ book }}---{{ book.name }}--{{ book.price }}
+    --{{ book.values }}--{{ book.keys }}---{{ book.items }}</div>
+<div>学生：{{ stu }}--{{ stu.name }}----{{ stu.age }}</div>
+<div>性别：{{ gender | default:'男' }}</div>
+<div>随机爱好：
+    <ul>
+        {% for hooby in hobbys %}
+            <li> {{ hooby }} </li>
+        {% endfor %}
+    </ul>
+</div>
+<div>年龄：{{ age }}</div>
+<div>年龄：{{ age }}</div>
+</body>
+</html>

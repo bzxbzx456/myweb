@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+使用include
+{% endblock %}
+{% block content %}
+{% include 'tag.html' %}
+    {# 模板中声明变量 #}
+    {% with alpha=1 beta=2  %} {# 局部变量 #}
+    {{ alpha }}
+    {% endwith %}
+{% endblock %}

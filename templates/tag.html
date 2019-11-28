@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签使用</title>
+    <style>
+        div {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid hotpink;
+        }
+
+        ul {
+            padding-left: 0;
+        }
+
+        li {
+            list-style: none;
+            font-size: 18px;
+            color: aqua;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+{% if lists %}
+    <div>{{ lists }}</div>
+{% else %}
+    <h1>没有任何内容</h1>
+{% endif %}
+
+<hr>
+
+    <div>
+    <ul>
+        {% for lis in lists %}
+            <li>{{ lis }}</li>
+        {% empty %}
+            <h1>没有内容</h1>
+        {% endfor %}
+    </ul>
+    </div>
+
+<hr>
+<div>
+    <table border="1" cellspacing="0" width="80%">
+        {% for lis in lists %}
+            <tr>
+                <td>{{ forloop.counter }}</td> {# counter后面接0就是从0开始  可以实现循环计数 #}
+                <td>{{ lis }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+<hr>
+<div>
+    {% for lis in list1 %}
+        <table border="1" cellspacing="0" width="80%">
+        {% for l in lis %}
+            <tr>
+                <td>{{ forloop.parentloop.counter }}-{{ forloop.counter }}</td>
+                <td>{{ l }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% endfor %}
+</div>
+</body>
+</html>

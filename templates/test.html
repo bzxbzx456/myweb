@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+{# 模板注释 #}
+<div>{{ msg | length }}</div>  {# msg的长度 #}
+<div>{{ msg | safe }}</div>    {# 安全的编译整个msg里的内容 #}
+<div>{{ msg | safe |title }}</div> {# 安全的编译整个msg里的内容并且全部大写 #}
+<div>{{ msg }}</div>   {# 获取msg内容 #}
+<div>{{ msg |title}}</div> {# 全部大写 #}
+<div>{{ msg |capfirst}}</div>  {# 首字母大写 #}
+<div>{{ msg |upper}}</div>  {# msg全部大写 #}
+<div>{{ msg |lower}}</div>  {# msg全部小写 #}
+<div>{{ msg |cut:''}}</div>  {# 替换 #}
+<div>{{ msg |default:'bad boy'}}</div>   {# 如果没有内容显示default里的内容 #}
+<hr>
+<div>{{ number |add:100}}</div> {# 加100 #}
+<div>{{ number |add:-10}}</div>  {# 减10 #}
+<div>{{ score |floatformat}}</div>  {# 后面不加：值的话默认保留一位小数 #}
+<div>{{ score |floatformat:0}}</div>  {# 保留0位小数 #}
+<div>{{ score |floatformat:2}}</div>  {# 保留两位小数 #}
+<hr>
+<div>{{ lists |first }}</div>    {# 列表第一个 #}
+<div>{{ lists |last }}</div>    {# 列表最后一个 #}
+<div>{{ lists |length }}</div>   {# 列表长度 #}
+<div>{{ lists |join:'*' }}</div>   {# 列表以*做拼接 #}
+<div>{{ lists |slice:'3' }}</div>   {# 切片到下标为3的位置 #}
+<div>{{ lists |random }}</div>   {# 随机选择 #}
+<div>{{ dt }}</div>                   {# 显示当前时间 #}
+<div>{{ dt |date:'Y年m月d日 A' }}</div>   {# 显示年月日 是上午还是下午 #}
+<div>{{ dt |time:'H:i' }}</div>         {# 显示时间 #}
+</body>
+</html>
